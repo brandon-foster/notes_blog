@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'southtut',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
