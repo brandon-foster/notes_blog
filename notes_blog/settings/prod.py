@@ -107,7 +107,7 @@ if environ.has_key('DATABASE_URL'):
     
     # Static asset configuration
     import os
-    PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+    PROJECT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
     
