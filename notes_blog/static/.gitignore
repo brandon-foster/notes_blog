@@ -1,0 +1,6 @@
+# I want to include this empty directory
+
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
