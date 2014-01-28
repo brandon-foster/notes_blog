@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'south',
     'pytz',
     'blog',
-    'django-wysiwyg-redactor',
+    'redactor',
 )
 
 MIDDLEWARE_CLASSES = (
