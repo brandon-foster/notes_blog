@@ -12,5 +12,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'blog.views.index'),
     url(r'^(?P<slug>[\w\-]+)/$', 'blog.views.post'),
-    url(r'^static/(?P.*)$', 'django.views.static.serve', { 'document_root': settings.prod.STATIC_ROOT }),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.prod.STATIC_ROOT }),
 )
