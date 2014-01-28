@@ -111,5 +111,6 @@ if environ.has_key('DATABASE_URL'):
     
     STATICFILES_DIRS = (
         os.path.join(PROJECT_PATH, 'static'),
+        os.path.join(BASE_DIR, 'blog/static'),
     )
     ##############################################################################
