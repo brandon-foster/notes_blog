@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
 
 # Application definition
@@ -111,6 +111,5 @@ if environ.has_key('DATABASE_URL'):
     
     STATICFILES_DIRS = (
         os.path.join(PROJECT_PATH, 'static'),
-        os.path.join(BASE_DIR, 'blog/static'),
     )
     ##############################################################################
