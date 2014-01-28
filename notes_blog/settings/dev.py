@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'south',
     'pytz',
     'blog',
+    'redactor',
 )
 
 MIDDLEWARE_CLASSES = (
