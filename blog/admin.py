@@ -1,5 +1,17 @@
 from django.contrib import admin
+from django.forms import ModelForm
+
+from redactor.widgets import RedactorEditor
+
 from blog.models import Post
+
+class PostAdminForm(ModelForm):
+    class Meta:
+        model = Post
+        fields = '__all__'
+        widgets = {
+            'content': RedactorEditor(),
+        }
 
 class PostAdmin(admin.ModelAdmin):
     # fields display on change list
@@ -19,5 +31,8 @@ class PostAdmin(admin.ModelAdmin):
     
     # prepopulate the slug from the title - big timesaver!
     prepopulated_fields = {"slug": ("title",)}
+    
+    # redactor
+    form = PostAdminForm
 
 admin.site.register(Post, PostAdmin)
