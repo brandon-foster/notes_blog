@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'blog.views.index'),
+    url(r'^$', 'blog.views.index', name='index'),
     url(r'^(?P<slug>[\w\-]+)/$', 'blog.views.post'),
     url(r'^redactor/', include('redactor.urls')),
 )
