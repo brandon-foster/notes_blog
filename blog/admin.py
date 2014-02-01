@@ -15,13 +15,13 @@ class PostAdminForm(ModelForm):
 
 class PostAdmin(admin.ModelAdmin):
     # fields display on change list
-    list_display = ['title', 'description']
+    list_display = ['title', 'description', 'course_name']
     
     # fields to filter the change list with
-    list_filter = ['published', 'created']
+    list_filter = ['published', 'created', 'course_name']
     
     # fields to search in change list
-    search_fields = ['title', 'description', 'content']
+    search_fields = ['title', 'description', 'content', 'course_name']
 
     # enable the date drill down on change list
     date_hierarchy = 'created'

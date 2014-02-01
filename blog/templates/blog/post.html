@@ -5,7 +5,7 @@
 {% block content %}
 <article>
     <header>
-        <a href="{% url "index" %}">Home</a>
+        <p><a href="{% url 'index' %}">Home</a> &raquo; {{ post.title }}</p>
         <h1>{{ post.title }}</h1>
         <p>
             Posted on
