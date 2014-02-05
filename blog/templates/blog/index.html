@@ -3,25 +3,34 @@
 {% block title %} Blog Archive {% endblock %}
 
 {% block content %}
+    
     <h1>Notes</h1>
     
     {% for post in posts %}
-    <div class="post">
-        <h2>
-            <a href="{{ post.get_absolute_url }}">
-                {{ post.title }}
-            </a>
-        </h2>
-        
-        <p>{{ post.course_name }}:<br /> {{ post.description }}</p>
-        
-        <p>
-            Posted on
-            <time datetime="{{ post.created|date:'c' }}">
-                {{ post.created|date }}
-            </time>
-        </p>
-        
-    </div>
+    
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title">
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+
+            <p class="post-meta">
+                By <a class="post-author" href="#">Brandon Foster</a> under <a class="post-category post-category-yui">{{ post.course_name }}</a>
+            </p>
+        </header>
+
+        <div class="post-description">
+            <p>{{ post.description }}</p>
+            <p>
+                Posted on
+                <time datetime="{{ post.created|date:'c' }}">
+                    {{ post.created|date }}
+                </time>
+            </p>
+        </div>
+    </section>
+    
     {% endfor %}
 {%  endblock %}
