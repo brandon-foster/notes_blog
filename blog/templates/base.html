@@ -1,17 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A personal archive of course notes during my undergraduate Computer Science years.">
+
         <title>
             {% block title %} {% endblock %}
         </title>
         {% load staticfiles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles.css' %}" />
+        <!--<link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles.css' %}" />-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="{% static 'blog/css/main-grid-old-ie.css' %}">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="{% static 'blog/css/main-grid.css' %}">
+        <!--<![endif]-->
+      
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="{% static 'blog/css/layouts/blog-old-ie.css' %}">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="{% static 'blog/css/layouts/blog.css' %}">
+        <!--<![endif]-->
     </head>
     <body>
-        <div class="content">
-            {% block content %}
-            {% endblock %}
+        <div id="layout" class="pure-g">
+            <div class="sidebar pure-u-1 pure-u-med-1-4">
+                <div class="header">
+                    <hgroup>
+                        <h1 class="brand-title">Course Notes</h1>
+                        <h2 class="brand-tagline">my undergraduate courses at Virginia Tech</h2>
+                    </hgroup>
+        
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://www.brandonkimfoster.com" target="_blank">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pure-button" href="http://github.com/Brandon-Foster" target="_blank">GitHub</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="content pure-u-1 pure-u-med-3-4">
+                <div>
+                    <div class="posts">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+        
+                    <div class="footer">
+                        <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                            <ul>
+                                <li><a href="http://purecss.io/" target="_blank">Layout from Pure</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
+
+    <script src="http://yui.yahooapis.com/3.14.1/build/yui/yui.js"></script>
+    <script>
+    YUI().use('node-base', 'node-event-delegate', function (Y) {
+        // This just makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        Y.one('body').delegate('click', function (e) {
+            e.preventDefault();
+        }, 'a[href="#"]');
+    });
+    </script>
     </body>
 </html>
