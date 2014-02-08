@@ -189,3 +189,10 @@ h3 {
   top: 0;
   bottom: 0;
 }
+
+/******** PERSONAL MODIFICATIONS ********/
+h1 > a:hover,
+a.post-category:hover {
+    text-decoration: none;
+}
+/****************/

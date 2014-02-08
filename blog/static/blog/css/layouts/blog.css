@@ -175,7 +175,8 @@ h3 {
 }
 
 /******** PERSONAL MODIFICATIONS ********/
-h1 > a:hover {
+h1 > a:hover,
+a.post-category:hover {
     text-decoration: none;
 }
 /****************/
