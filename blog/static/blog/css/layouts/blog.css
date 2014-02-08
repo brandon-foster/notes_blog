@@ -173,3 +173,9 @@ h3 {
         bottom: 0;
     }
 }
+
+/******** PERSONAL MODIFICATIONS ********/
+h1 > a:hover {
+    text-decoration: none;
+}
+/****************/
